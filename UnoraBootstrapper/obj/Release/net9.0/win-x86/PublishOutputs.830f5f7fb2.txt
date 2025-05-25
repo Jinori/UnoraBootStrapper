@@ -1,0 +1,2 @@
+C:\Users\Admin\Documents\GitHub\UnoraBootstrapper\UnoraBootstrapper\bin\Release\net9.0\win-x86\publish\UnoraBootstrapper.pdb
+C:\Users\Admin\Documents\GitHub\UnoraBootstrapper\UnoraBootstrapper\bin\Release\net9.0\win-x86\publish\UnoraBootstrapper.exe

@@ -1,0 +1,17 @@
+C:\Users\Admin\Documents\GitHub\UnoraBootstrapper\UnoraBootstrapper\bin\Release\net9.0\UnoraBootstrapper.exe
+C:\Users\Admin\Documents\GitHub\UnoraBootstrapper\UnoraBootstrapper\bin\Release\net9.0\UnoraBootstrapper.deps.json
+C:\Users\Admin\Documents\GitHub\UnoraBootstrapper\UnoraBootstrapper\bin\Release\net9.0\UnoraBootstrapper.runtimeconfig.json
+C:\Users\Admin\Documents\GitHub\UnoraBootstrapper\UnoraBootstrapper\bin\Release\net9.0\UnoraBootstrapper.dll
+C:\Users\Admin\Documents\GitHub\UnoraBootstrapper\UnoraBootstrapper\bin\Release\net9.0\UnoraBootstrapper.pdb
+C:\Users\Admin\Documents\GitHub\UnoraBootstrapper\UnoraBootstrapper\bin\Release\net9.0\Newtonsoft.Json.dll
+C:\Users\Admin\Documents\GitHub\UnoraBootstrapper\UnoraBootstrapper\obj\Release\net9.0\UnoraBootstrapper.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\UnoraBootstrapper\UnoraBootstrapper\obj\Release\net9.0\UnoraBootstrapper.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Documents\GitHub\UnoraBootstrapper\UnoraBootstrapper\obj\Release\net9.0\UnoraBootstrapper.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\GitHub\UnoraBootstrapper\UnoraBootstrapper\obj\Release\net9.0\UnoraBootstrapper.AssemblyInfo.cs
+C:\Users\Admin\Documents\GitHub\UnoraBootstrapper\UnoraBootstrapper\obj\Release\net9.0\UnoraBootstrapper.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GitHub\UnoraBootstrapper\UnoraBootstrapper\obj\Release\net9.0\UnoraBoo.C9869604.Up2Date
+C:\Users\Admin\Documents\GitHub\UnoraBootstrapper\UnoraBootstrapper\obj\Release\net9.0\UnoraBootstrapper.dll
+C:\Users\Admin\Documents\GitHub\UnoraBootstrapper\UnoraBootstrapper\obj\Release\net9.0\refint\UnoraBootstrapper.dll
+C:\Users\Admin\Documents\GitHub\UnoraBootstrapper\UnoraBootstrapper\obj\Release\net9.0\UnoraBootstrapper.pdb
+C:\Users\Admin\Documents\GitHub\UnoraBootstrapper\UnoraBootstrapper\obj\Release\net9.0\UnoraBootstrapper.genruntimeconfig.cache
+C:\Users\Admin\Documents\GitHub\UnoraBootstrapper\UnoraBootstrapper\obj\Release\net9.0\ref\UnoraBootstrapper.dll
