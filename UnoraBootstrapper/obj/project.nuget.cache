@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "4Zl3zUQKi/8=",
+  "dgSpecHash": "zd93aviTBWxslbaLlipBWDFnSNBihBH4G8BJFETUd9gr+I77c7rGcLpZmkGR1wrkneKuu2tQelcN8DjvUegk+w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Documents\\GitHub\\UnoraBootstrapper\\UnoraBootstrapper\\UnoraBootstrapper.csproj",
+  "projectFilePath": "/app/UnoraBootstrapper/UnoraBootstrapper.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "/home/swebot/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.3/microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",
+    "/home/swebot/.nuget/packages/microsoft.netframework.referenceassemblies.net48/1.0.3/microsoft.netframework.referenceassemblies.net48.1.0.3.nupkg.sha512",
+    "/home/swebot/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": []
 }

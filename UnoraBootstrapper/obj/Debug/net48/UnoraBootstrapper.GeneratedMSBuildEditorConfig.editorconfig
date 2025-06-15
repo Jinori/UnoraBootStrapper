@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = UnoraBootstrapper
+build_property.ProjectDir = /app/UnoraBootstrapper/
+build_property.EnableComHosting =
+build_property.EnableGeneratedComInterfaceComImportInterop =

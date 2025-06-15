@@ -1,0 +1,6 @@
+/app/UnoraBootstrapper/obj/Debug/net48/UnoraBootstrapper.csproj.AssemblyReference.cache
+/app/UnoraBootstrapper/obj/Debug/net48/UnoraBootstrapper.GeneratedMSBuildEditorConfig.editorconfig
+/app/UnoraBootstrapper/obj/Debug/net48/UnoraBootstrapper.AssemblyInfoInputs.cache
+/app/UnoraBootstrapper/obj/Debug/net48/UnoraBootstrapper.AssemblyInfo.cs
+/app/UnoraBootstrapper/obj/Debug/net48/UnoraBootstrapper.csproj.CoreCompileInputs.cache
+/app/UnoraBootstrapper/obj/Debug/net48/UnoraBootstrapper.sourcelink.json
