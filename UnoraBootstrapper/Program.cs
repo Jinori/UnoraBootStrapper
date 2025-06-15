@@ -1,5 +1,9 @@
 ﻿using System.Diagnostics;
 using Newtonsoft.Json;
+using System.IO;
+using System.Threading.Tasks;
+using System;
+using System.Net.Http;
 
 namespace UnoraBootstrapper
 {
@@ -14,14 +18,15 @@ namespace UnoraBootstrapper
 
         private static async Task<int> Main(string[] args)
         {
-            await using var log = new StreamWriter(LogPath, true);
-            log.AutoFlush = true;
-            await log.WriteLineAsync($"=== Bootstrapper started at {DateTime.Now} ===");
-            try
+            using (var log = new StreamWriter(LogPath, true))
             {
-                if (args.Length < 1)
+                log.AutoFlush = true;
+                await log.WriteLineAsync($"=== Bootstrapper started at {DateTime.Now} ===");
+                try
                 {
-                    await log.WriteLineAsync("ERROR: No launcher path provided.");
+                    if (args.Length < 1)
+                    {
+                        await log.WriteLineAsync("ERROR: No launcher path provided.");
                     return 1;
                 }
 
@@ -83,7 +88,7 @@ namespace UnoraBootstrapper
             }
             catch (Exception ex)
             {
-                await File.AppendAllTextAsync(LogPath, $"[Bootstrapper error at {DateTime.Now}] {ex}\n");
+                File.AppendAllText(LogPath, $"[Bootstrapper error at {DateTime.Now}] {ex}\n");
                 Console.Error.WriteLine($"[Bootstrapper error] {ex}");
                 Console.WriteLine("Press any key to exit.");
                 Console.ReadKey();
@@ -91,16 +96,19 @@ namespace UnoraBootstrapper
             }
         }
 
+
         private static async Task<string> GetServerVersionAsync(StreamWriter log)
         {
-            using var httpClient = new HttpClient();
-            var url = $"{SERVER_BASE_URL}/{VERSION_ENDPOINT}";
-            await log.WriteLineAsync($"Requesting server version from: {url}");
-            var json = await httpClient.GetStringAsync(url);
-            dynamic obj = JsonConvert.DeserializeObject(json);
-            var version = (string)obj.Version;
-            await log.WriteLineAsync($"Server returned version: {version}");
-            return version;
+            using (var httpClient = new HttpClient())
+            {
+                var url = $"{SERVER_BASE_URL}/{VERSION_ENDPOINT}";
+                await log.WriteLineAsync($"Requesting server version from: {url}");
+                var json = await httpClient.GetStringAsync(url);
+                dynamic obj = JsonConvert.DeserializeObject(json);
+                var version = (string)obj.Version;
+                await log.WriteLineAsync($"Server returned version: {version}");
+                return version;
+            }
         }
 
         private static string GetLocalLauncherVersion(string launcherPath)
@@ -123,14 +131,15 @@ namespace UnoraBootstrapper
             var tempPath = launcherPath + ".tmp";
             var downloadUrl = $"{SERVER_BASE_URL}/{LAUNCHER_DOWNLOAD_ENDPOINT}";
             await log.WriteLineAsync($"Downloading new launcher from: {downloadUrl}");
-            using var httpClient = new HttpClient();
-
-            using (var response = await httpClient.GetAsync(downloadUrl))
+            using (var httpClient = new HttpClient())
             {
-                response.EnsureSuccessStatusCode();
-                using (var fs = new FileStream(tempPath, FileMode.Create, FileAccess.Write, FileShare.None))
+                using (var response = await httpClient.GetAsync(downloadUrl))
                 {
-                    await response.Content.CopyToAsync(fs);
+                    response.EnsureSuccessStatusCode();
+                    using (var fs = new FileStream(tempPath, FileMode.Create, FileAccess.Write, FileShare.None))
+                    {
+                        await response.Content.CopyToAsync(fs);
+                    }
                 }
             }
             await log.WriteLineAsync($"Download complete to temp: {tempPath}");
@@ -138,14 +147,18 @@ namespace UnoraBootstrapper
             if (File.Exists(launcherPath))
             {
                 var backupPath = launcherPath + BACKUP_SUFFIX;
-                if (File.Exists(backupPath)) 
+                if (File.Exists(backupPath))
                     File.Delete(backupPath);
-                
+
                 File.Move(launcherPath, backupPath);
                 await log.WriteLineAsync($"Backed up old launcher to: {backupPath}");
             }
 
-            File.Move(tempPath, launcherPath, true);
+            if (File.Exists(launcherPath))
+            {
+                File.Delete(launcherPath);
+            }
+            File.Move(tempPath, launcherPath);
             await log.WriteLineAsync($"Replaced launcher with new version.");
         }
     }
